@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Background Slideshow */
+.slideshow-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.slideshow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FFE53B;
+background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+   color: whitesmoke;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 10px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a:hover {
+    color: #2c09ba;
+}
+
+.nav-links a i {
+    margin-right: 8px;
+}
+
+/* Mobile Menu Button */
+.menu-button {
+    display: none;
+    background: white;
+    color: orange;
+    border: 2px solid orange;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: orange;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 10px;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked ~ .mobile-menu {
+    display: flex;
+}
+.mobile-menu a:hover {
+    color: rgb(66, 8, 193);
+}
+/* Temple Description Section */
+.temple-description {
+    margin-top: 100vh;
+    padding: 40px;
+    background: rgba(255, 248, 225, 0.8);
+    text-align: center;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 100vh auto 20px;
+    box-shadow: 0 4px 10px rgba(230, 227, 227, 0.396);
+}
+
+.temple-description h2 {
+    color: #ff6600;
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.temple-description p {
+    font-size: 20px;
+    color: #1b1a1a;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Social Media Section */
+.social-media-section {
+    text-align: center;
+    background:rgba(245, 241, 241, 0.842);
+    padding: 20px 0;
+    margin-top: 0px;
+    margin-bottom: 130px;
+}
+
+.social-media-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media-container a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.social-media-container a:hover {
+    transform: scale(1.1);
+}
+
+.social-media-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+    .social-media {
+        bottom: 10px;
+        right: 10px;
+    }
+    .social-media-container a {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: orange;
+    
+    
+    color:#0d1117;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+} 
+
+.donate-button {
+    display: inline-block;
+  background-color:yellowgreen;
+    color: #00108c;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.donate-button:hover {
+    background:#666;
+}
+
+
+/* Our Work Section */
+.our-work {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f9f9f9;
+}
+
+.our-work h2 {
+    font-size: 28px;
+    color: #ff6600;
+    margin-bottom: 20px;
+}
+
+.work-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.work-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.work-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.work-item p {
+    font-size: 15px;
+    color: #232020;
+    line-height: 1.5;
+}
+
+.transport-medium {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f9f9f9;
+}
+
+.transport-medium h2 {
+    font-size: 28px;
+    color: #ff6600;
+    margin-bottom: 20px;
+}
+
+.transport-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.transport-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.transport-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.transport-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.transport-item p {
+    font-size: 20px;
+    color: #232121;
+    line-height: 1.5;
+}
+
+.work-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.work-item video:hover {
+    transform: scale(1.02);
+}
